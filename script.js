@@ -2,7 +2,7 @@
 function validarFormulario(){
     var folio = document.getElementById("folio").value;
     var administrado = document.getElementById("administrado").value;
-    var direccion = document.getElementById("direccion").value;
+    var expediente = document.getElementById("expediente").value;
     var docNot = document.getElementById("docNot").value;
     var fecha  = document.getElementById("fecha").value;
     var comentario = document.getElementById("comentario").value;
@@ -15,8 +15,8 @@ function validarFormulario(){
         alert("Los datos del administrado son requeridos");
         return false;
     }
-    if(direccion == ""){
-        alert("La direccion es requerida");
+    if(expediente == ""){
+        alert("El expediente es requerido");
         return false;
     }
     if(docNot == ""){
@@ -49,7 +49,7 @@ function mostrarDatos(){
         html += "<tr>";
         html += "<td>" + element.folio + "</td>";
         html += "<td>" + element.administrado + "</td>";
-        html += "<td>" + element.direccion + "</td>";
+        html += "<td>" + element.expediente + "</td>";
         html += "<td>" + element.docNot + "</td>";
         html += "<td>" + element.fecha + "</td>";
         html += "<td>" + element.comentario + "</td>";
@@ -67,7 +67,7 @@ function AddData(){
     if(validarFormulario() == true){
         var folio = document.getElementById("folio").value;
         var administrado = document.getElementById("administrado").value;
-        var direccion = document.getElementById("direccion").value;
+        var expediente = document.getElementById("expediente").value;
         var docNot = document.getElementById("docNot").value;
         var fecha = document.getElementById("fecha").value;
         var comentario = document.getElementById("comentario").value;
@@ -81,7 +81,7 @@ function AddData(){
         listAdministrado.push({
             folio : folio, 
             administrado : administrado,
-            direccion : direccion,
+            expediente : expediente,
             docNot : docNot,
             fecha : fecha,
             comentario : comentario,
@@ -91,7 +91,7 @@ function AddData(){
         mostrarDatos();
         document.getElementById("folio").value = "";
         document.getElementById("administrado").value = "";
-        document.getElementById("direccion").value = "";
+        document.getElementById("expediente").value = "";
         document.getElementById("docNot").value = "";
         document.getElementById("fecha").value = "";
         document.getElementById("comentario").value = "";
@@ -128,7 +128,7 @@ function updateData(index) {
 
     document.getElementById("folio").value = listAdministrado[index].folio;
     document.getElementById("administrado").value = listAdministrado[index].administrado;
-    document.getElementById("direccion").value = listAdministrado[index].direccion;
+    document.getElementById("expediente").value = listAdministrado[index].expediente;
     document.getElementById("docNot").value = listAdministrado[index].docNot;
     document.getElementById("fecha").value = listAdministrado[index].fecha;
     document.getElementById("comentario").value = listAdministrado[index].comentario;
@@ -138,7 +138,7 @@ function updateData(index) {
         if (validarFormulario() == true){
             listAdministrado[index].folio = document.getElementById("folio").value;
             listAdministrado[index].administrado = document.getElementById("administrado").value;
-            listAdministrado[index].direccion = document.getElementById("direccion").value;
+            listAdministrado[index].expediente = document.getElementById("expediente").value;
             listAdministrado[index].docNot = document.getElementById("docNot").value;
             listAdministrado[index].fecha = document.getElementById("fecha").value;
             listAdministrado[index].comentario = document.getElementById("comentario").value;
@@ -149,7 +149,7 @@ function updateData(index) {
 
             document.getElementById("folio").value = "";
             document.getElementById("administrado").value = "";
-            document.getElementById("direccion").value = "";
+            document.getElementById("expediente").value = "";
             document.getElementById("docNot").value = "";
             document.getElementById("fecha").value = "";
             document.getElementById("comentario").value = "";
