@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD NOTIFICACIONES</title>
+    <title>CRUD ACTUALIZACIONES</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/style.css">
 </head>
@@ -16,34 +16,32 @@
         <div class="mb-5">
             <div class="row">
                 <div class="form-group col-md-6 mb-3">
-                    <label for="folio">Folio</label>
-                    <input type="number" name="folio" class="form-control" id="folio"
-                        placeholder="Ingresar el numero de folio">
+                    <label for="expediente">Numero de expediente</label>
+                    <input type="text" name="expediente" class="form-control" id="expediente"
+                        placeholder="Ingresar expediente">
                 </div>
                 <div class="form-group col-md-6 mb-3">
-                    <label for="administrado">Nombre del administrado</label>
-                    <input type="text" name="administrado" class="form-control" id="administrado"
+                    <label for="folio">Numeros de folio</label>
+                    <input type="number" name="folio" class="form-control" id="folio"
                         placeholder="Ingresar nombre del administrado">
                 </div>
                 <div class="form-group col-md-6 mb-3">
-                    <label for="expediente">Expediente del administrado</label>
-                    <input type="text" name="expediente" class="form-control" id="expediente"
-                        placeholder="Ingresar el expediente de la cedula de notificacion">
+                    <label for="nombreEncargado">Nombre del encargado del expediente</label>
+                    <input type="text" name="nombreEncargado" class="form-control" id="nombreEncargado"
+                        placeholder="Ingresar nombre del encargado del expediente">
                 </div>
                 <div class="form-group col-md-6 mb-3">
-                    <label for="docNot">Documentos notificados</label>
-                    <input type="text" name="docNot" class="form-control" id="docNot"
-                        placeholder="Ingresar documentos notificados">
-                </div>
-                <div class="form-group col-md-6 mb-3">
-                    <label for="fecha">Fecha</label>
-                    <input type="date" name="fecha" class="form-control" id="fecha"
+                    <label for="fecha">Fecha de actualizacion</label>
+                    <input type="text" name="fecha" class="form-control" id="fecha"
                         placeholder="Ingresar fecha de la notificacion">
                 </div>
                 <div class="form-group col-md-6 mb-3">
-                    <label for="comentario">Comentarios</label>
-                    <input type="text" name="comentario" class="form-control" id="comentario"
-                        placeholder="Ingresar quien recibe o bajo puerta">
+                    <label for="estado">Estado de expediente</label>
+                    
+                    <select id="estados" class="form-control">
+                            <option value="Concluido">Concluido</option>
+                            <option value="Tramite">Tramite</option>
+                            </select>
                 </div>
                 <div class="col-lg-12 mt-5">
                     <button class="btn btn-success" id="Submit" 
@@ -61,12 +59,11 @@
                 <table class="table table-bordered" id="crudTable">
                     <thead>
                         <tr>
-                            <th>Folio</th>
-                            <th>Administrado</th>
-                            <th>Expediente del administrado</th>
-                            <th>Documentos notificados</th>
-                            <th>Fecha de notificacion</th>
-                            <th>Comentarios</th>
+                            <th>Numero de expediente</th>
+                            <th>Folios actualizados</th>
+                            <th>Nombre del encargado del expediente</th>
+                            <th>Fecha de actualizacion</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -75,7 +72,7 @@
             </div>
         </div>
     </div>
-    <script src="/script.js"></script>
+    <script src="/actualizaciones.js"></script>
 </body>
 
 </html>
