@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="folio">Numeros de folio</label>
-                    <input type="number" name="folio" class="form-control" id="folio"
+                    <input type="text" name="folio" class="form-control" id="folio"
                         placeholder="Ingresar nombre del administrado">
                 </div>
                 <div class="form-group col-md-6 mb-3">
@@ -32,23 +32,20 @@
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="fecha">Fecha de actualizacion</label>
-                    <input type="text" name="fecha" class="form-control" id="fecha"
+                    <input type="date" name="fecha" class="form-control" id="fecha"
                         placeholder="Ingresar fecha de la notificacion">
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="estado">Estado de expediente</label>
-                    
-                    <select id="estados" class="form-control">
-                            <option value="Concluido">Concluido</option>
-                            <option value="Tramite">Tramite</option>
-                            </select>
+                    <select id="estados" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option value="Concluido">Concluido</option>
+                        <option value="Tramite">Tramite</option>
+                      </select>
                 </div>
                 <div class="col-lg-12 mt-5">
-                    <button class="btn btn-success" id="Submit" 
-                    onclick="AddData()">
+                    <button class="btn btn-success" id="Submit" onclick="AddData()">
                         Agregar</button>
-                    <button class="btn btn-primary" id="Update" 
-                    onclick="UpDate()">
+                    <button class="btn btn-primary" id="Update" onclick="UpDate()">
                         Actualizar</button>
                 </div>
             </div>
@@ -72,7 +69,7 @@
             </div>
         </div>
     </div>
-    <script src="/actualizaciones.js"></script>
+    <script src="/actualizacion.js"></script>
 </body>
 
 </html>
