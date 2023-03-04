@@ -179,3 +179,14 @@ function updateData(actualizacion) {
         
         }
 }
+
+
+document.addEventListener("keyup", e=> {
+    if (e.target.matches("#buscador")){
+        document.querySelectorAll(selectors, ".articulo").forEach(elemento => {
+            elemento.textContent.tolowerCase().includes(e.target.value.tolowerCase())
+            ?elemento.classList.remove(tokens,"filtro")
+            :elemento.classList.add(filtro)
+        })
+    }
+})

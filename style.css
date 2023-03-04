@@ -1,5 +1,33 @@
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+header .link {
+   
+    display: flex;
+}
+.link{
+    margin-left: 10px;
+}
+.form-select {
+    text-decoration-color: aqua;
+}
+
+
 body{
     background: #1d2630;
+}
+h2{
+    text-align: center;
 }
 
 *{
@@ -8,4 +36,8 @@ body{
 
 #Update{
     display: none;
+}
+
+.option {
+    color: #2b2727;
 }
