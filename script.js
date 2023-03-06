@@ -160,3 +160,34 @@ function updateData(index) {
         }
     }
 }
+
+function buscar() {
+    // Obtener el valor actual del campo de búsqueda
+    var valor = document.getElementById("buscador").value.toLowerCase();
+  
+    // Seleccionar la tabla
+    var tabla = document.getElementById("crudTable");
+  
+    // Iterar a través de las filas de la tabla
+    for (var i = 0; i < tabla.rows.length; i++) {
+      // Obtener el contenido de las celdas relevantes para la búsqueda
+      var expediente = tabla.rows[i].cells[0].textContent.toLowerCase();
+      var folio = tabla.rows[i].cells[1].textContent.toLowerCase();
+      var encargado = tabla.rows[i].cells[2].textContent.toLowerCase();
+      var fecha = tabla.rows[i].cells[3].textContent.toLowerCase();
+      var estado = tabla.rows[i].cells[4].textContent.toLowerCase();
+  
+      // Comprobar si la fila contiene el valor de búsqueda
+      if (expediente.indexOf(valor) > -1 ||
+          folio.indexOf(valor) > -1 ||
+          encargado.indexOf(valor) > -1 ||
+          fecha.indexOf(valor) > -1 ||
+          estado.indexOf(valor) > -1) {
+        // Mostrar la fila si contiene el valor de búsqueda
+        tabla.rows[i].style.display = "";
+      } else {
+        // Ocultar la fila si no contiene el valor de búsqueda
+        tabla.rows[i].style.display = "none";
+      }
+    }
+  }

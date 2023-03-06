@@ -1,3 +1,7 @@
+#busca:hover {
+    background-color: orange ;
+    
+  }
 .navbar {
     overflow: hidden;
     background-color: #333;
