@@ -13,24 +13,19 @@
 
     <nav class="navbar">
         <div class="container-fluid" id="link">
-          <a class="navbar-brand" href="/">Index</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="/actualizacion.html" id="link">actualizacion</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          
+            <a class="navbar-brand" href="/">Index</a>
+            <a class="navbar-brand" href="/actualizacion.html" id="link">Actualizacion</a>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" id="buscador" placeholder="Search" aria-label="Search" oninput="buscar()">
+                <input class="form-control me-2" type="search" id="buscador" placeholder="Search" aria-label="Search"
+                    oninput="buscar()">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
-          </div>
         </div>
-      </nav>
-      </header>
-    <body>
+        </div>
+    </nav>
+</header>
+
+<body>
     <div class="container">
         <h2 class="mt-5 mb-5">ACTUALIZACION</h2>
         <div class="mb-5">
@@ -57,10 +52,11 @@
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="estado">Estado de expediente</label>
-                    <select id="estados" class="form-select form-select mb-3 col-md-6" aria-label=".form-select example">
+                    <select id="estados" class="form-select form-select mb-3 col-md-6"
+                        aria-label=".form-select example">
                         <option class="option" value="Concluido">Concluido</option>
                         <option class="option" value="Tramite">Tramite</option>
-                      </select>
+                    </select>
                 </div>
                 <div class="col-lg-12 mt-5">
                     <button class="btn btn-success" id="Submit" onclick="AddData()">

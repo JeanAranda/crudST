@@ -4,7 +4,7 @@
   }
 .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: #34424b;
     font-family: Arial;
 }
 .navbar a {
@@ -15,13 +15,11 @@
     padding: 14px 16px;
     text-decoration: none;
   }
-header .link {
-   
-    display: flex;
+.navbar-brand{
+    display: inline-block;
+    padding: 0 20px;
 }
-.link{
-    margin-left: 10px;
-}
+
 .form-select {
     text-decoration-color: aqua;
 }
