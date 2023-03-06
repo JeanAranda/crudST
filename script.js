@@ -1,33 +1,33 @@
 // Esta funcion es para validar los datos que se ingresan al formulario
-function validarFormulario(){
+function validarFormulario() {
     var folio = document.getElementById("folio").value;
     var administrado = document.getElementById("administrado").value;
     var expediente = document.getElementById("expediente").value;
     var docNot = document.getElementById("docNot").value;
-    var fecha  = document.getElementById("fecha").value;
+    var fecha = document.getElementById("fecha").value;
     var comentario = document.getElementById("comentario").value;
 
-    if(folio == ""){
+    if (folio == "") {
         alert("El folio es requerido");
         return false;
     }
-    if(administrado == ""){
+    if (administrado == "") {
         alert("Los datos del administrado son requeridos");
         return false;
     }
-    if(expediente == ""){
+    if (expediente == "") {
         alert("El expediente es requerido");
         return false;
     }
-    if(docNot == ""){
+    if (docNot == "") {
         alert("Los documentos son requeridos");
         return false;
     }
-    if(fecha == ""){
+    if (fecha == "") {
         alert("Fecha es requerido");
         return false;
     }
-    if(comentario == ""){
+    if (comentario == "") {
         alert("El comentario o quien recibe es requerido");
         return false;
     }
@@ -35,17 +35,17 @@ function validarFormulario(){
 }
 
 // Esta funcion es para mostrar los datos del formulario
-function mostrarDatos(){
+function mostrarDatos() {
     var listAdministrado;
-    if(localStorage.getItem("listAdministrado") == null){
+    if (localStorage.getItem("listAdministrado") == null) {
         listAdministrado = [];
     }
-    else{
+    else {
         listAdministrado = JSON.parse(localStorage.getItem("listAdministrado"));
     }
     var html = "";
 
-    listAdministrado.forEach(function (element, index){
+    listAdministrado.forEach(function (element, index) {
         html += "<tr>";
         html += "<td>" + element.folio + "</td>";
         html += "<td>" + element.administrado + "</td>";
@@ -53,7 +53,7 @@ function mostrarDatos(){
         html += "<td>" + element.docNot + "</td>";
         html += "<td>" + element.fecha + "</td>";
         html += "<td>" + element.comentario + "</td>";
-        html += '<td><button onclick="deleteData('+index+')"class="btn btn-danger">Eliminar</button><button onclick="updateData('+index+')"class="btn btn-warning m-2">Editar</button>';
+        html += '<td><button onclick="deleteData(' + index + ')"class="btn btn-danger">Eliminar</button><button onclick="updateData(' + index + ')"class="btn btn-warning m-2">Editar</button>';
     });
     document.querySelector("#crudTable tbody").innerHTML = html;
 }
@@ -62,9 +62,9 @@ function mostrarDatos(){
 document.onload = mostrarDatos();
 
 //funcion para agregar datos
-function AddData(){
+function AddData() {
     //Si el formulario es valido
-    if(validarFormulario() == true){
+    if (validarFormulario() == true) {
         var folio = document.getElementById("folio").value;
         var administrado = document.getElementById("administrado").value;
         var expediente = document.getElementById("expediente").value;
@@ -73,18 +73,18 @@ function AddData(){
         var comentario = document.getElementById("comentario").value;
 
         var listAdministrado;
-        if (localStorage.getItem("listAdministrado") == null){
+        if (localStorage.getItem("listAdministrado") == null) {
             listAdministrado = [];
         } else {
             listAdministrado = JSON.parse(localStorage.getItem("listAdministrado"));
         }
         listAdministrado.push({
-            folio : folio, 
-            administrado : administrado,
-            expediente : expediente,
-            docNot : docNot,
-            fecha : fecha,
-            comentario : comentario,
+            folio: folio,
+            administrado: administrado,
+            expediente: expediente,
+            docNot: docNot,
+            fecha: fecha,
+            comentario: comentario,
         });
 
         localStorage.setItem("listAdministrado", JSON.stringify(listAdministrado));
@@ -99,12 +99,12 @@ function AddData(){
 }
 
 //Funcion para borrar los datos del formulario 
-function deleteData(index){
+function deleteData(index) {
     var listAdministrado;
-    if(localStorage.getItem("listAdministrado") == null){
+    if (localStorage.getItem("listAdministrado") == null) {
         listAdministrado = [];
     }
-    else{
+    else {
         listAdministrado = JSON.parse(localStorage.getItem("listAdministrado"));
     }
 
@@ -119,10 +119,10 @@ function updateData(index) {
     document.getElementById("Update").style.display = "block";
 
     var listAdministrado;
-    if(localStorage.getItem("listAdministrado") == null){
+    if (localStorage.getItem("listAdministrado") == null) {
         listAdministrado = [];
     }
-    else{
+    else {
         listAdministrado = JSON.parse(localStorage.getItem("listAdministrado"));
     }
 
@@ -133,16 +133,16 @@ function updateData(index) {
     document.getElementById("fecha").value = listAdministrado[index].fecha;
     document.getElementById("comentario").value = listAdministrado[index].comentario;
 
-    document.querySelector("#Update").onclick = function(){
-        
-        if (validarFormulario() == true){
+    document.querySelector("#Update").onclick = function () {
+
+        if (validarFormulario() == true) {
             listAdministrado[index].folio = document.getElementById("folio").value;
             listAdministrado[index].administrado = document.getElementById("administrado").value;
             listAdministrado[index].expediente = document.getElementById("expediente").value;
             listAdministrado[index].docNot = document.getElementById("docNot").value;
             listAdministrado[index].fecha = document.getElementById("fecha").value;
             listAdministrado[index].comentario = document.getElementById("comentario").value;
-            
+
             localStorage.setItem("listAdministrado", JSON.stringify(listAdministrado));
 
             mostrarDatos();
@@ -156,7 +156,7 @@ function updateData(index) {
 
             document.getElementById("Submit").style.display = "block";
             document.getElementById("Update").style.display = "none";
-        
+
         }
     }
 }
@@ -164,30 +164,32 @@ function updateData(index) {
 function buscar() {
     // Obtener el valor actual del campo de búsqueda
     var valor = document.getElementById("buscador").value.toLowerCase();
-  
+
     // Seleccionar la tabla
     var tabla = document.getElementById("crudTable");
-  
+
     // Iterar a través de las filas de la tabla
     for (var i = 0; i < tabla.rows.length; i++) {
-      // Obtener el contenido de las celdas relevantes para la búsqueda
-      var expediente = tabla.rows[i].cells[0].textContent.toLowerCase();
-      var folio = tabla.rows[i].cells[1].textContent.toLowerCase();
-      var encargado = tabla.rows[i].cells[2].textContent.toLowerCase();
-      var fecha = tabla.rows[i].cells[3].textContent.toLowerCase();
-      var estado = tabla.rows[i].cells[4].textContent.toLowerCase();
-  
-      // Comprobar si la fila contiene el valor de búsqueda
-      if (expediente.indexOf(valor) > -1 ||
-          folio.indexOf(valor) > -1 ||
-          encargado.indexOf(valor) > -1 ||
-          fecha.indexOf(valor) > -1 ||
-          estado.indexOf(valor) > -1) {
-        // Mostrar la fila si contiene el valor de búsqueda
-        tabla.rows[i].style.display = "";
-      } else {
-        // Ocultar la fila si no contiene el valor de búsqueda
-        tabla.rows[i].style.display = "none";
-      }
+        // Obtener el contenido de las celdas relevantes para la búsqueda
+        var folio = tabla.rows[i].cells[0].textContent.toLowerCase();
+        var administrado = tabla.rows[i].cells[1].textContent.toLowerCase();
+        var expediente = tabla.rows[i].cells[2].textContent.toLowerCase();
+        var docNot = tabla.rows[i].cells[3].textContent.toLowerCase();
+        var fecha = tabla.rows[i].cells[4].textContent.toLowerCase();
+        var comentario = tabla.rows[i].cells[5].textContent.toLowerCase();
+
+        // Comprobar si la fila contiene el valor de búsqueda
+        if (folio.indexOf(valor) > -1 ||
+            administrado.indexOf(valor) > -1 ||
+            expediente.indexOf(valor) > -1 ||
+            docNot.indexOf(valor) > -1 ||
+            fecha.indexOf(valor) > -1 ||
+            comentario.indexOf(valor) > -1) {
+            // Mostrar la fila si contiene el valor de búsqueda
+            tabla.rows[i].style.display = "";
+        } else {
+            // Ocultar la fila si no contiene el valor de búsqueda
+            tabla.rows[i].style.display = "none";
+        }
     }
-  }
+}
