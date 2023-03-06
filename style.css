@@ -9,16 +9,13 @@
 }
 .navbar a {
     float: left;
-    font-size: 16px;
+    font-size: 20px;
     color: white;
-    text-align: center;
+    text-align:center;
     padding: 14px 16px;
     text-decoration: none;
   }
-.navbar-brand{
-    display: inline-block;
-    padding: 0 20px;
-}
+
 
 .form-select {
     text-decoration-color: aqua;
